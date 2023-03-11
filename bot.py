@@ -38,7 +38,7 @@ async def must_join_channel(bot: Client, msg: Message):
     except ChatAdminRequired:
         print(f"I'm not admin in the MUST_JOIN chat : {MUST_JOIN} !")
 
-@app.on_message(filters.group & (filters.service | filters.status_update))
+@app.on_message(filters.group & (filters.service))
 async def hide_join_leave(client, message):
     if message.new_chat_members or message.left_chat_member:
         await message.delete()
