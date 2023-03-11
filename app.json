@@ -1,50 +1,35 @@
 {
-  "name": "Join Hider Bot",
-  "description": "This bot helps to delete user joined & left messages in groups.",
-  "keywords": [
-    "Join",
-    "Join-Hider",
-    "Hider"
-  ],
-  "website": "https://github.com/GreatBots/Join-Hider-Bot",
-  "repository": "https://github.com/GreatBots/Join-Hider-Bot"
-  },
-  "env": {
-    "BOT_TOKEN": {
-      "description": "...",
-      "value": ""
+    "name": "Join-Hider-Bot",
+    "description": "A bot that deletes iser joined & left messages.",
+    "repository": "https://github.com/GreatBots/Join-Hider-Bot",
+    "keywords": [
+       
+        "telegram bot",
+        "pyrogram"
+
+    ],
+    "env": {
+        "APP_ID": {
+            "description": "Get this value from my.telegram.org",
+            "value": ""
+        },
+        "API_HASH": {
+            "description": "Get this value from my.telegram.org",
+            "value": ""
+        },
+        "BOT_TOKEN": {
+            "description": "ID of the message to edit.",
+            "value": ""
+        }
     },
-    "API_ID": {
-      "description": "...",
-      "value": "5"
-    },
-    "API_HASH": {
-      "description": "...",
-      "value": "5"
-    }
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "standard-1x"
-    }
-  },
-  "image": "heroku/python",
-  "addons": [
-    "openredis",
+    "buildpacks": [
     {
-      "plan": "mongolab:shared-single-small",
-      "as": "MONGO"
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
     },
     {
-      "plan": "heroku-postgresql",
-      "options": {
-        "version": "9.5"
-      }
-    }
-  ],
-  "buildpacks": [
-    {
-      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
-    }
+      "url": "heroku/python"
+        }
+    ]
 }
+
+     
