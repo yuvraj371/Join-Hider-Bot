@@ -6,10 +6,12 @@ from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForb
 
 MUST_JOIN = "MyOwnBots"
 
-bot_token = os.environ.get("BOT_TOKEN")
-api_hash = os.environ.get("API_HASH") 
-api_id = os.environ.get("API_ID")
-app = Client("Join-Hider-Bot",api_id=api_id, api_hash=api_hash,bot_token=bot_token)  
+app = Client(
+    "Join-Hider-Bot",
+    bot_token=os.environ["BOT_TOKEN"],
+    api_id=int(os.environ["API_ID"]),
+    api_hash=os.environ["API_HASH"],
+)
 
 @app.on_message(filters.incoming & filters.private, group=-1)
 async def must_join_channel(bot: Client, msg: Message):
