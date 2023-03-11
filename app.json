@@ -10,12 +10,16 @@
   "repository": "https://github.com/GreatBots/Join-Hider-Bot"
   },
   "env": {
-    "SECRET_TOKEN": {
-      "description": "A secret key for verifying the integrity of signed cookies.",
+    "BOT_TOKEN": {
+      "description": "...",
       "value": ""
     },
-    "WEB_CONCURRENCY": {
-      "description": "The number of processes to run.",
+    "API_ID": {
+      "description": "...",
+      "value": "5"
+    },
+    "API_HASH": {
+      "description": "...",
       "value": "5"
     }
   },
@@ -25,7 +29,7 @@
       "size": "standard-1x"
     }
   },
-  "image": "heroku/ruby",
+  "image": "heroku/python",
   "addons": [
     "openredis",
     {
