@@ -6,9 +6,9 @@ from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForb
 
 MUST_JOIN = "MyOwnBots"
 
-bot_token = os.environ.get("BOT_TOKEN", "")
-api_hash = os.environ.get("API_HASH", "") 
-api_id = os.environ.get("API_ID", "")
+bot_token = os.environ.get("BOT_TOKEN")
+api_hash = os.environ.get("API_HASH") 
+api_id = int(os.environ.get("API_ID"))
 app = Client("Join-Hider-Bot",api_id=api_id, api_hash=api_hash,bot_token=bot_token)  
 
 @app.on_message(filters.incoming & filters.private, group=-1)
