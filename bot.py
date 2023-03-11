@@ -11,7 +11,7 @@ api_hash = os.environ.get("API_HASH", "")
 api_id = os.environ.get("API_ID", "")
 app = Client("Join-Hider-Bot",api_id=api_id, api_hash=api_hash,bot_token=bot_token)  
 
-@app.on_message(~filters.edited & filters.incoming & filters.private, group=-1)
+@app.on_message(filters.incoming & filters.private, group=-1)
 async def must_join_channel(bot: Client, msg: Message):
     if not MUST_JOIN:  # Not compulsory
         return
