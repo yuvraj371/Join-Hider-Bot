@@ -45,9 +45,12 @@ async def hide_join_leave(client, message):
     if message.new_chat_members or message.left_chat_member:
         await message.delete()
 
-@app.on_message(filters.command("start") & filters.private )
+@app.on_message(filters.command("start", "help", "about") & filters.private )
 async def reply_hello(client, message):
     mention = message.from_user.mention
-    await message.reply(f"Hello {mention}, I'm a Join Hider Bot That Hides The Messages Like 'User joined' 'User left'. 👋")
+    await message.reply(f"Hello {mention} 👋 , I'm a Join Hider Bot That Hides The Messages Like `User joined` & `User left`. "),
+    reply_markup=InlineKeyboardMarkup([
+                        [InlineKeyboardButton("Join Updates Channel", url="https://myownbots.t.me")]
+                    ])
 
 app.run()
