@@ -7,7 +7,7 @@ MUST_JOIN = "MyOwnBots"
 
 app = Client("JoinHiderBot")
 
-@Client.on_message(~filters.edited & filters.incoming & filters.private, group=-1)
+@app.on_message(~filters.edited & filters.incoming & filters.private, group=-1)
 async def must_join_channel(bot: Client, msg: Message):
     if not MUST_JOIN:  # Not compulsory
         return
@@ -39,7 +39,7 @@ async def hide_join_leave(client, message):
     if message.new_chat_members or message.left_chat_member:
         await message.delete()
 
-@app.on_message(filters.group & filters.private & ~filters.service)
+@app.on_message(filters.command("start", "about", "help") & filters.private & ~filters.service)
 async def reply_hello(client, message):
     mention = message.from_user.mention
     await message.reply(f"Hello {mention}, I'm a Join Hider Bot That Hides The Messages Like 'User joined' 'User left'. 👋")
