@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden
 
-MUST_JOIN = "MyOwnBots"
+MUST_JOIN = "Infinity_XBotz"
 
 app = Client(
     "Join-Hider-Bot",
