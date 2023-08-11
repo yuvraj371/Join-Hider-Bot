@@ -50,7 +50,7 @@ async def reply_hello(client, message):
     mention = message.from_user.mention
     await message.reply(f"👋 Hello {mention} , I'm a Join Hider Bot That Hides The Messages Like `User joined` & `User left`. "),
     reply_markup=InlineKeyboardMarkup([
-                        [InlineKeyboardButton("Join Updates Channel", url="https://myownbots.t.me")]
+                        [InlineKeyboardButton("Join Updates Channel", url="https://t.me/Infinity_XBotz")]
                     ])
 
 app.run()
